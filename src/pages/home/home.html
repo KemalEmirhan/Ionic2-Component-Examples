@@ -7,8 +7,99 @@
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+
+<app-touch-event></app-touch-event>
+
+  <ion-grid padding text-center>
+    <ion-row>
+      <ion-col>
+        A column
+      </ion-col>
+      <ion-col width-6><!--Ionic 2 de width araligi 1-12 dir.-->
+        Second Column
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col offset-6><!--Ionic 2 de offset araligi 1-12 dir. -->
+        Another column
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+  <button (click)="onClick()"
+  ion-button>A normal button</button>
+
+  <button (click)="onClick()"
+  ion-button icon-right>Home
+  <ion-icon name="home"></ion-icon>
+  </button>
+
+  <button (click)="onClick()"
+  ion-button outline>A normal button</button>
+
+  <button (click)="onClick()"
+  ion-button clear>A normal button</button>
+
+  <button (click)="onClick()"
+  ion-button round>A normal button</button>
+
+   <button (click)="onClick()"
+  ion-button small block>A normal button</button>
+
+  <ion-list no-lines inset><!--no-lines liste cizgilerini yok eder, inset ise ekstra alan verir list itemlara -->
+    <ion-item>
+      <ion-icon name="star" item-left></ion-icon>
+     A normal item
+    </ion-item>
+    <button ion-item>A normal button</button>
+  </ion-list>
+
+  <ion-item-group>
+    <ion-item-divider>
+      A
+    </ion-item-divider>
+    <ion-item>Avocados</ion-item>
+    <ion-item no-lines>Apples</ion-item>
+    <ion-item-divider>
+      B
+    </ion-item-divider>
+    <ion-item>Bananas</ion-item>
+    <ion-item>Berries</ion-item>
+
+    <ion-list>
+      <ion-list-header>
+        Privacy
+      </ion-list-header>
+      <ion-item>
+        Tracking
+      </ion-item>
+      <ion-item>
+        Personel Images
+      </ion-item>
+    </ion-list>
+
+    <ion-list>
+      <ion-list-header>
+        Sharing
+      </ion-list-header>
+      <ion-item>
+        With anyone
+      </ion-item>
+      <ion-item>
+        None
+      </ion-item>
+    </ion-list>
+
+
+  </ion-item-group>
+
+
+  <ion-list reoder="true" (ionItemReoder)="reoderItems($event)">
+    <ion-item *ngFor="let item of items">
+      {{item}}
+    </ion-item>
+  </ion-list>
+
 </ion-content>
